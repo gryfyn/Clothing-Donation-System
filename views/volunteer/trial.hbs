@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griffins Geoffrey Adero - Software Engineer & Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="./css/receivedonation.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <style>
+        body{
+            font-family: 'Rubik';
+        }
+    </style>
+</head>
+
+<body style="font-family: 'Rubik';">
+    
+
+    <header>
+        <div style="font-size: 42px;"><i class="fa fa-heartbeat" aria-hidden="true" style="color: #B53389; margin-top: 20px;"></i>
+              Donation Hub</div>
+        <div id="nav">
+            <a href="/home-page">HOME</a>
+            <a href="/donate-page"  class="current-page">RECEIVE DONATION</a>
+            <a href="/centers-page">ACTIVITIES</a>
+            <a href="/aboutus-page" >ABOUT US</a>
+            <a href="/contact-us-page">CONTACTS</a>
+        </div>
+    </header>
+
+    <div id="socials-links">
+        
+        <a href="/linkedIn-link"><i class="fa fa-linkedin" aria-hidden="true"></i></a><br>
+        <a href="/instagram-link"><i class="fa fa-instagram" aria-hidden="true"></i></a><br>
+        <a href="/facebook-link"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+        <a href="/twitter-link"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+
+    <div id="mainbody" style="height:1200px; margin-left: 80px; margin-top: 150px; font-size:28px; color: #B53389; font-family: 'Rubik';" >
+        <div id="profile">
+            <form action="/profile-page"><button id="user"><i class="fa fa-user-circle" aria-hidden="true"> </i>    User Profile</button> </form>
+           <form action="/logout"> <button id="logout"> Logout <i class="fa fa-sign-out" aria-hidden="true"></i></button></form>
+        </div>
+        
+          <h1>Search Donor</h1>
+
+    <form id="searchForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName">
+        <br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName">
+        <br>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address">
+        <br>
+        <button type="submit">Search</button>
+    </form>
+
+    <div id="searchResults"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#searchForm').submit(function(event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+
+                // Get the form data
+                var formData = {
+                    firstName: $('#firstName').val(),
+                    lastName: $('#lastName').val(),
+                    address: $('#address').val()
+                };
+
+                // Send an AJAX request to the backend
+                $.ajax({
+                    type: 'GET',
+                    url: '/search-donor',
+                    data: formData,
+                    success: function(response) {
+                        displaySearchResults(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error:', error);
+                    }
+                });
+            });
+        });
+
+        // Function to display search results
+        function displaySearchResults(results) {
+            var resultHTML = '<h2>Search Results</h2>';
+
+            if (results.length > 0) {
+                resultHTML += '<ul>';
+                results.forEach(function(donor) {
+                    resultHTML += '<li>' + donor.firstname + ' ' + donor.lastname + ', ' + donor.address + '</li>';
+                });
+                resultHTML += '</ul>';
+            } else {
+                resultHTML += '<p>No donors found.</p>';
+            }
+
+            $('#searchResults').html(resultHTML);
+        }
+    </script>
+    </div>
+
+
+    <footer>
+        <div id="contacts">
+            <a href="/linkedIn-link"><i class="fa fa-linkedin" aria-hidden="true" style="color: #000"></i></a>  &nbsp;  &nbsp;
+            <a href="/instagram-link"><i class="fa fa-instagram" aria-hidden="true" style="color: #000;"></i></a>  &nbsp;  &nbsp;
+            <a href="/facebook-link"><i class="fa fa-facebook" aria-hidden="true" style="color: #000;"></i></a>  &nbsp;  &nbsp;
+            <a href="/twitter-link"><i class="fa fa-twitter" aria-hidden="true" style="color: #000;"></i></a>
+            <p><i class="fa fa-phone" aria-hidden="true"></i>: &nbsp; +254719508717 <br>
+            <i class="fa fa-envelope" aria-hidden="true"></i>: &nbsp; donationhub@gmail.com <br>
+            &copy; 2024 Donation Hub Inc. All rights reserved.</p>
+        </div>
+        
+        
+    </footer>
+
+  
+
+</body>
+
+</html>

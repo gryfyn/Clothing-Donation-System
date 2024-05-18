@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griffins Geoffrey Adero - Software Engineer & Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        body{
+            font-family: 'Rubik';
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+        <div style="font-size: 42px;"><i class="fa fa-heartbeat" aria-hidden="true" style="color: #B53389; margin-top: 20px;"></i>  Donation Hub</div>
+        <div id="nav">
+            <a href="/home-page">HOME</a>
+            <a href="/donate-page">DONATE</a>
+            <a href="/aboutus-page">ABOUT US</a>
+            <a href="/centers-page">CENTERS</a>
+            <a href="/contact-us-page">CONTACT US</a>
+        </div>
+    </header>
+
+    <div id="socials-links">
+        
+        <a href="/linkedIn-link"><i class="fa fa-linkedin" aria-hidden="true"></i></a><br>
+        <a href="/instagram-link"><i class="fa fa-instagram" aria-hidden="true"></i></a><br>
+        <a href="/facebook-link"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+        <a href="/twitter-link"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+
+
+<div id="mainbody" style="height: 1200px; margin-left: 300px; margin-top: 50px; font-size: 32px; color: #B53389;">
+  <p style="max-width: 70%; height: 550px; text-align: center;  font-family: 'Rubik'; background-image: url('/images/4.png'); background-color: rgba(255, 255, 255, 0.65); background-blend-mode: lighten; background-size: contain; background-repeat: no-repeat;">
+     <br> <br>Welcome to our community <br>
+     where fashion and philanthropy intertwine seamlessly.
+      Join us on our mission to spread love through compassionate 
+      clothing donation. Learn how you can become a part of our global community. <br> <br>
+      &nbsp; <button id="getstarted" onclick="login()">Get Started </button>
+  </p>
+<p style="background-color: #B53389; height: 60px; color:white; margin-left:-200px; margin-top:-80px;">Impact Stories</p>
+          <div class="slideshow-container">
+
+                <div class="mySlides fade">
+
+                <img src="/images/img1.png" style="width:80%; height:400px;">
+                
+                </div>
+
+                <div class="mySlides fade">
+                
+                <img src="/images/img2.png" style="width:80%; height:400px;">
+                
+                </div>
+
+                <div class="mySlides fade">
+                
+                <img src="/images/img3.png" style="width:80%; height:400px;">
+                
+                </div>
+
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                </div>
+
+          </div>
+        
+          
+    
+
+    <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 8000); // Change image every 2 seconds
+            }
+    </script>
+  
+</div>
+    <footer>
+        <div id="contacts">
+            <a href="/linkedIn-link"><i class="fa fa-linkedin" aria-hidden="true" style="color: #000"></i></a>  &nbsp;  &nbsp;
+            <a href="/instagram-link"><i class="fa fa-instagram" aria-hidden="true" style="color: #000;"></i></a>  &nbsp;  &nbsp;
+            <a href="/facebook-link"><i class="fa fa-facebook" aria-hidden="true" style="color: #000;"></i></a>  &nbsp;  &nbsp;
+            <a href="/twitter-link"><i class="fa fa-twitter" aria-hidden="true" style="color: #000;"></i></a>
+            <p><i class="fa fa-phone" aria-hidden="true"></i>:+254719508717 <br>
+            <i class="fa fa-envelope" aria-hidden="true"></i>:donationhub@gmail.com <br>
+            &copy; 2024 Donation Hub Inc. All rights reserved.</p>
+        </div>
+        
+        
+    </footer>
+
+    <script>
+        function login(){
+            window.location.href = '/login-page';
+        }
+    </script>
+
+</body>
+
+</html>

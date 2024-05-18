@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griffins Geoffrey Adero - Software Engineer & Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+
+    <link rel="stylesheet" href="./css/centers.css">
+    <style>
+        body{
+            font-family: 'Rubik';
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div style="font-size: 42px;"><i class="fa fa-heartbeat" aria-hidden="true" style="color: #B53389; margin-top: 20px;"></i>
+              Donation Hub</div>
+        <div id="nav">
+            <a href="/home-page">HOME</a>
+            <a href="/donate-page"  >DONATE</a>
+            <a href="/aboutus-page">ABOUT US</a>
+            <a href="/centers-page" class="current-page">CENTERS</a>
+            <a href="/contact-us-page">CONTACT US</a>
+        </div>
+    </header>
+
+    <div id="socials-links">
+        
+        <a href="/linkedIn-link"><i class="fa fa-linkedin" aria-hidden="true"></i></a><br>
+        <a href="/instagram-link"><i class="fa fa-instagram" aria-hidden="true"></i></a><br>
+        <a href="/facebook-link"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+        <a href="/twitter-link"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+
+    <div id="#mainbody" style="height:800px; margin-left: 80px; margin-top: 100px; font-size:25px; color: #B53389; font-family: 'Rubik';" >
+        <div id="profile">
+            <form action="/profile-page"><button id="user"><i class="fa fa-user-circle" aria-hidden="true"> </i>    User Profile</button> </form>
+           <form action="/logout"> <button id="logout"> Logout <i class="fa fa-sign-out" aria-hidden="true"></i></button></form>
+        </div>
+        <div id="contact-us">
+            <h4 style="font-size: 32px;" >Find a donation center near you</h4>
+            <p style="width: 60%;">Clothing Hub has many centers across the City where you can make your donations. These centers have been strategically been placed 
+                in every constituency to extend our reach and services offered. Kindly search the location closest to you for convinience.
+            </p>
+            <p>Select your sub-county:</p>
+            
+            <select id="subcounty-dropdown" onchange="showLocation()">
+                <option value="" disabled selected>Select Sub-county</option>
+                <option value="Westlands">Westlands</option>
+                <option value="Dagoretti North">Dagoretti North</option>
+                <option value="Dagoretti South">Dagoretti South</option>
+                <option value="Langata">Langata</option>
+                <option value="Kibra">Kibra</option>
+                <option value="Roysambu">Roysambu</option>
+                <option value="Kasarani">Kasarani</option>
+                <option value="Ruaraka">Ruaraka</option>
+                <option value="Embakasi South">Embakasi South</option>
+                <option value="Embakasi North">Embakasi North</option>
+                <option value="Embakasi Central">Embakasi Central</option>
+                <option value="Embakasi East">Embakasi East</option>
+                <option value="Embakasi West">Embakasi West</option>
+                <option value="Kamukunji">Kamukunji</option>
+                <option value="Starehe">Starehe</option>
+                <option value="Mathare">Mathare</option>
+            </select>
+            <div id="location-info" style="display: none; color: #0047AB;"></div>
+        </div>
+        
+
+
+        
+        
+        
+    </div>
+
+    </div>
+
+    <footer>
+        <div id="contacts">
+            <a href="/linkedIn-link"><i class="fa fa-linkedin" aria-hidden="true" style="color: #000"></i></a>  &nbsp;  &nbsp;
+            <a href="/instagram-link"><i class="fa fa-instagram" aria-hidden="true" style="color: #000;"></i></a>  &nbsp;  &nbsp;
+            <a href="/facebook-link"><i class="fa fa-facebook" aria-hidden="true" style="color: #000;"></i></a>  &nbsp;  &nbsp;
+            <a href="/twitter-link"><i class="fa fa-twitter" aria-hidden="true" style="color: #000;"></i></a>
+            <p><i class="fa fa-phone" aria-hidden="true"></i>: &nbsp; +254719508717 <br>
+            <i class="fa fa-envelope" aria-hidden="true"></i>: &nbsp; donationhub@gmail.com <br>
+            &copy; 2024 Donation Hub Inc. All rights reserved.</p>
+        </div>
+        
+        
+    </footer>
+
+    <script>
+        function showLocation() {
+            var dropdown = document.getElementById("subcounty-dropdown");
+            var selectedSubcounty = dropdown.options[dropdown.selectedIndex].text;
+            var locationInfo = document.getElementById("location-info");
+    
+            if (selectedSubcounty !== "Select Sub-county") {
+                locationInfo.style.display = "block";
+                // Generate unique location center name for each sub-county
+                var locationCenter = generateLocationCenter(selectedSubcounty);
+                locationInfo.innerHTML = "Location Center:<br>" + locationCenter;
+            } else {
+                locationInfo.style.display = "none";
+            }
+        }
+    
+        function generateLocationCenter(subcounty) {
+            var locationCenter = "";
+            switch (subcounty) {
+                case "Westlands":
+                    locationCenter = "Westlands Children's Home";
+                    break;
+                case "Dagoretti North":
+                    locationCenter = "Dagoretti North Children's Home";
+                    break;
+                case "Dagoretti South":
+                    locationCenter = "Dagoretti South Children's Home";
+                    break;
+                case "Langata":
+                    locationCenter = "Langata Children's Home";
+                    break;
+                case "Kibra":
+                    locationCenter = "Kibra Children's Home";
+                    break;
+                case "Roysambu":
+                    locationCenter = "Roysambu Children's Home";
+                    break;
+                case "Kasarani":
+                    locationCenter = "Kasarani Children's Home";
+                    break;
+                case "Ruaraka":
+                    locationCenter = "Ruaraka Children's Home";
+                    break;
+                case "Embakasi South":
+                    locationCenter = "Embakasi South Children's Home";
+                    break;
+                case "Embakasi North":
+                    locationCenter = "Embakasi North Children's Home";
+                    break;
+                case "Embakasi Central":
+                    locationCenter = "Embakasi Central Children's Home";
+                    break;
+                case "Embakasi East":
+                    locationCenter = "Embakasi East Children's Home";
+                    break;
+                case "Embakasi West":
+                    locationCenter = "Embakasi West Children's Home";
+                    break;
+                case "Kamukunji":
+                    locationCenter = "Kamukunji Children's Home";
+                    break;
+                case "Starehe":
+                    locationCenter = "Starehe Children's Home";
+                    break;
+                case "Mathare":
+                    locationCenter = "Mathare Children's Home";
+                    break;
+                default:
+                    locationCenter = "Unknown Children's Home";
+            }
+            return locationCenter;
+        }
+    </script>
+</body>
+
+</html>

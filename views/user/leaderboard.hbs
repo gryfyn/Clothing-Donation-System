@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griffins Geoffrey Adero - Software Engineer & Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/profile.css">
+    <style>
+        body{
+            font-family: 'Rubik';
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        td{
+            font-size: 20px;
+            color: #000;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-size: 22px;
+
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div style="font-size: 42px;"><i class="fa fa-heartbeat" aria-hidden="true" style="color: #B53389; margin-top: 20px;"></i>
+              Donation Hub</div>
+        <div id="nav">
+            <a href="/home-page">HOME</a>
+            <a href="/donate-page"  >DONATE</a>
+            <a href="/aboutus-page" >ABOUT US</a>
+            <a href="/centers-page">CENTERS</a>
+            <a href="/contact-us-page">CONTACT US</a>
+        </div>
+
+    </header>
+    <div id="nav2">
+            <a href="/profile-page">VIEW PROFILE</a>
+            <a href="/previous-donations"  >PREVIOUS DONATIONS</a>
+            <a href="/leaderboard-page" >LEADERBOARD</a>
+            <a href="/badges-page">BADGES</a>
+        </div>
+
+    <div id="socials-links">
+        
+        <a href="/linkedIn-link"><i class="fa fa-linkedin" aria-hidden="true"></i></a><br>
+        <a href="/instagram-link"><i class="fa fa-instagram" aria-hidden="true"></i></a><br>
+        <a href="/facebook-link"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+        <a href="/twitter-link"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+
+    <div id="#mainbody" style="height:800px; margin-left: 80px; margin-top: 140px; font-size:28px; color: #B53389; font-family: 'Rubik';" >
+        <div id="profile">
+            <form action="/profile-page"><button id="user" action="/profile-page"><i class="fa fa-user-circle" aria-hidden="true"> </i>    User Profile</button> </form>
+            <form action="/logout"><button id="logout" action="/logout"> Logout <i class="fa fa-sign-out" aria-hidden="true"></i></button> </form>
+        </div>
+    
+    <div class="container">
+        <h4>Leaderboard Ranking</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Donor ID</th>
+                    <th>Donation Count</th>
+                    <th>Level</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboardBody"></tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetchLeaderboard();
+        });
+
+        function fetchLeaderboard() {
+            fetch('/leaderboard')
+                .then(response => response.json())
+                .then(data => {
+                    populateLeaderboard(data);
+                })
+                .catch(error => {
+                    console.error('Error fetching leaderboard data:', error);
+                });
+        }
+
+        function populateLeaderboard(data) {
+            const leaderboardBody = document.getElementById('leaderboardBody');
+            leaderboardBody.innerHTML = '';
+
+            data.forEach((user, index) => {
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${user.donorid}</td>
+                        <td>${user.donationCount}</td>
+                        <td>${user.level}</td>
+                    </tr>
+                `;
+                leaderboardBody.innerHTML += row;
+            });
+        }
+    </script>
+
+
+    </div>
+
+    <footer>
+        <div id="contacts">
+            <a href="/linkedIn-link"><i class="fa fa-linkedin" aria-hidden="true" style="color: #000"></i></a>  &nbsp;  &nbsp;
+            <a href="/instagram-link"><i class="fa fa-instagram" aria-hidden="true" style="color: #000;"></i></a>  &nbsp;  &nbsp;
+            <a href="/facebook-link"><i class="fa fa-facebook" aria-hidden="true" style="color: #000;"></i></a>  &nbsp;  &nbsp;
+            <a href="/twitter-link"><i class="fa fa-twitter" aria-hidden="true" style="color: #000;"></i></a>
+            <p><i class="fa fa-phone" aria-hidden="true"></i>: &nbsp; +254719508717 <br>
+            <i class="fa fa-envelope" aria-hidden="true"></i>: &nbsp; donationhub@gmail.com <br>
+            &copy; 2024 Donation Hub Inc. All rights reserved.</p>
+        </div>   
+    </footer>
+</body>
+
+</html>

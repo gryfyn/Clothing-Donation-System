@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griffins Geoffrey Adero - Software Engineer & Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/user.css">
+    <style>
+        body{
+            font-family: 'Rubik';
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <header>
+        <div style="font-size: 42px;"><i class="fa fa-heartbeat" aria-hidden="true" style="color: #B53389; margin-top: 20px;"></i>
+              Donation Hub</div>
+        <div id="nav">
+            <a href="/home-page">HOME</a>
+            <a href="/donate-page"  >DONATE</a>
+            <a href="/aboutus-page" >ABOUT US</a>
+            <a href="/centers-page">CENTERS</a>
+            <a href="/contact-us-page">CONTACT US</a>
+        </div>
+    </header>
+
+    <div id="socials-links">
+        
+        <a href="/linkedIn-link"><i class="fa fa-linkedin" aria-hidden="true"></i></a><br>
+        <a href="/instagram-link"><i class="fa fa-instagram" aria-hidden="true"></i></a><br>
+        <a href="/facebook-link"><i class="fa fa-facebook" aria-hidden="true"></i></a><br>
+        <a href="/twitter-link"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+
+    <div id="#mainbody" style="height:1000px; margin-left: 80px; margin-top: 100px; font-size:28px; color: #B53389; font-family: 'Rubik'; text-align:center;" >
+
+          <h2>Welcome to Donation Hub.</h2>
+          <p>Your next step towards generosity <br> in clothing donations.
+            <br>
+            
+          </p>
+          <div class="profile-container">
+        <form class="profile-form" action="/add-user-details" method="post" style="background-color: #E6E6FA; 
+        border-radius: 20px; width: 40%;  margin-left: 350px; height: 520px;"> <br>
+        <p>Kindly fill in the form below to capture  <br> your account details.</p>
+        
+        <label for="fName" style="font-size: 22px;">First Name:</label>
+        <input type="text" id="fName" name="fName" style=" background-color: #E6E6FA;  border-top: #E6E6FA; border-left: #E6E6FA;
+        border-right: #E6E6FA; 
+            border-bottom: #B53389 solid 2px;"> <br> <br>
+
+        <label for="lName" style="font-size: 22px;">Last Name:</label>
+        <input type="text" id="lName" name="lName" style=" background-color: #E6E6FA;  border-top: #E6E6FA; border-left: #E6E6FA;
+        border-right: #E6E6FA; 
+            border-bottom: #B53389 solid 2px;"> <br> <br>
+
+        <label for="lName" style="font-size: 22px;">Registered Email:</label>
+        <input type="text" id="email" name="email" style=" background-color: #E6E6FA;  border-top: #E6E6FA; border-left: #E6E6FA;
+        border-right: #E6E6FA; 
+            border-bottom: #B53389 solid 2px;"> <br> <br>
+
+        <label for="address" style="font-size: 22px;">Address:</label>
+        <input type="text" id="address" name="address" style=" background-color: #E6E6FA;  border-top: #E6E6FA; border-left: #E6E6FA;
+        border-right: #E6E6FA; 
+            border-bottom: #B53389 solid 2px;"> <br> <br>
+
+        <button class="next-button" >Next</button> <br>
+
+
+        </div>
+        </form> 
+
+        
+        <br>
+        <button class="skip-button" onclick="skip()">Skip Anyway</button>
+    </div>
+        </div>
+        
+        
+        
+    </div>
+
+    </div>
+
+    <footer>
+        <div id="contacts">
+            <a href="/linkedIn-link"><i class="fa fa-linkedin" aria-hidden="true" style="color: #000"></i></a>  &nbsp;  &nbsp;
+            <a href="/instagram-link"><i class="fa fa-instagram" aria-hidden="true" style="color: #000;"></i></a>  &nbsp;  &nbsp;
+            <a href="/facebook-link"><i class="fa fa-facebook" aria-hidden="true" style="color: #000;"></i></a>  &nbsp;  &nbsp;
+            <a href="/twitter-link"><i class="fa fa-twitter" aria-hidden="true" style="color: #000;"></i></a>
+            <p><i class="fa fa-phone" aria-hidden="true"></i>: &nbsp; +254719508717 <br>
+            <i class="fa fa-envelope" aria-hidden="true"></i>: &nbsp; donationhub@gmail.com <br>
+            &copy; 2024 Donation Hub Inc. All rights reserved.</p>
+        </div>
+        
+        
+    </footer>
+
+    <script>
+        function skip(){
+            window.location.href = '/login-page';
+        }
+    </script>
+
+</body>
+
+</html>
